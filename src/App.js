@@ -6,14 +6,14 @@ import "./App.css";
 
 //* Components
 import Navigation from "./components/navigation/Navigation";
+import Logo from "./components/Logo/Logo";
 
 function App() {
   return (
     <div className='App'>
       <Navigation />
-
-      {/* 
-       <Logo />
+      <Logo />
+      {/*
       <ImageLinkForm />
       <FaceRecognition />
       */}

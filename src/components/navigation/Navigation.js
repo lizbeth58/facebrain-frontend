@@ -2,8 +2,8 @@ import React from "react";
 
 const Navigation = props => {
   return (
-    <nav>
-      <p>Sign Out</p>
+    <nav style={{ display: "flex", justifyContent: "flex-end" }}>
+      <p className='f3 dim black underline pa3 pointer'>Sign Out</p>
     </nav>
   );
 };
