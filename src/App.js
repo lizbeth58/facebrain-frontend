@@ -1,5 +1,5 @@
 //* Dependencies
-import React from "react";
+import React, Component from "react";
 
 //* CSS
 import "./App.css";
@@ -23,20 +23,37 @@ const particlesOptions = {
   }
 };
 
-function App() {
+class App extends Component { 
+  constructor(){
+    super();
+    this.state = {
+      input: '',
+    }
+  }
+
+  onInputChange = (event) => {
+    this.setState({input: event.target.value});
+  }
+
+  onSubmit = (event) => {
+
+  }
+
+  render(){
   return (
     <div className='App'>
       <Particles className='particles' params={particlesOptions} />
       <Navigation />
       <Logo />
       <Rank />
-      <ImageLinkForm />
+      <ImageLinkForm  onInputChange={this.onInputChange} onSubmit={onSubmit}/>
 
       {/*
       <FaceRecognition />
       */}
     </div>
   );
+    }
 }
 
 export default App;
