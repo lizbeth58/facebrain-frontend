@@ -1,6 +1,7 @@
 //* Dependencies
 import React, { Component } from "react";
 import Clarifai from "clarifai";
+import Key from "./Secret";
 
 //* CSS
 import "./App.css";
@@ -17,7 +18,7 @@ import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 
 //*  Settings and Set Up
 const app = new Clarifai.App({
-  apiKey: "1daf58efe29b46758f7a4618be4d2f3a"
+  apiKey: Key
 });
 
 const particlesOptions = {
