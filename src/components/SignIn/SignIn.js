@@ -5,30 +5,30 @@ class SignIn extends Component {
     super(props);
     this.state = {
       signInEmail: "",
-      signInPassword: ""
+      signInPassword: "",
     };
   }
 
-  onEmailChange = event => {
+  onEmailChange = (event) => {
     this.setState({ signInEmail: event.target.value });
   };
 
-  onPasswordChange = event => {
+  onPasswordChange = (event) => {
     this.setState({ signInPassword: event.target.value });
   };
 
-  onSubmitSignIn = event => {
+  onSubmitSignIn = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3000/signin", {
+    fetch("https://aqueous-spire-18187.herokuapp.com/signin", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         email: this.state.signInEmail,
-        password: this.state.signInPassword
-      })
+        password: this.state.signInPassword,
+      }),
     })
-      .then(res => res.json())
-      .then(data => {
+      .then((res) => res.json())
+      .then((data) => {
         if (data.id) {
           this.props.loadUser(data);
           this.props.onRouteChange("home");
