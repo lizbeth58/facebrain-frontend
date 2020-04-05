@@ -6,22 +6,22 @@ class Register extends Component {
     this.state = {
       name: "",
       email: "",
-      password: ""
+      password: "",
     };
   }
-  onNameChange = event => {
+  onNameChange = (event) => {
     this.setState({ name: event.target.value });
   };
 
-  onEmailChange = event => {
+  onEmailChange = (event) => {
     this.setState({ email: event.target.value });
   };
 
-  onPasswordChange = event => {
+  onPasswordChange = (event) => {
     this.setState({ password: event.target.value });
   };
 
-  onSubmitRegister = event => {
+  onSubmitRegister = (event) => {
     event.preventDefault();
 
     fetch("http://localhost:3000/register", {
@@ -30,12 +30,12 @@ class Register extends Component {
       body: JSON.stringify({
         name: this.state.name,
         email: this.state.email,
-        password: this.state.password
-      })
+        password: this.state.password,
+      }),
     })
-      .then(res => res.json())
-      .then(data => {
-        if (data) {
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.id) {
           this.props.loadUser(data);
           this.props.onRouteChange("home");
         }
