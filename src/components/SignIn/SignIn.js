@@ -46,7 +46,7 @@ class SignIn extends Component {
               <legend className='f1 fw6 ph0 mh0'>Sign In</legend>
 
               <div className='mt3'>
-                <label className='db fw6 lh-copy f6' for='email-address'>
+                <label className='db fw6 lh-copy f6' htmlFor='email-address'>
                   Email
                 </label>
                 <input
@@ -59,7 +59,7 @@ class SignIn extends Component {
               </div>
 
               <div className='mv3'>
-                <label className='db fw6 lh-copy f6' for='password'>
+                <label className='db fw6 lh-copy f6' htmlFor='password'>
                   Password
                 </label>
                 <input
